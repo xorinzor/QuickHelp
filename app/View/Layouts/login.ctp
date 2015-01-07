@@ -20,8 +20,22 @@
     ?>
 </head>
 <body>
-    <?php
-        echo $this->fetch('content');
-    ?>
+    <div class="container">
+        <?php
+            $msg = $this->Session->flash('auth');
+            if(!empty($msg)) {
+                echo '<div class="alert alert-warning">' . $msg . '</div>';
+            }
+    
+            $msg = $this->Session->flash();
+            if(!empty($msg)) {
+                echo '<div class="alert alert-warning">' . $msg . '</div>';
+            }
+        ?>
+    
+        <div id="login-wrapper">
+            <?php echo $this->fetch('content'); ?>
+        </div>
+    </div>
 </body>
 </html>

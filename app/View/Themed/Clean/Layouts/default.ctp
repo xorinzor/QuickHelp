@@ -55,7 +55,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<li><a href="#">Social</a></li>
 					<li><a href="#">Chat</a></li>
 					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Stats</a></li>
+					<li><a href="#">Admin</a></li>
 				</ul>
+
+				<ul class="nav navbar-nav navbar-right navbar-profile">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							Xorinzor
+							<?php echo $this->Html->image('me.png', array('class' => 'img-circle profilepicture-small')); ?>
+						</a>
+
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Settings</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="navbar-divider navbar-right hidden-xs"></div>
 
 				<form id="search" class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
 					<div class="form-group">
@@ -70,29 +89,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</div><!--/.nav-collapse -->
 		</nav>
 
-		<?php echo $this->Session->flash(); ?>
-
 		<div id="sidebar">
 			<ul class="nav">
 				<li class="active"><a href="#"><i class="glyphicon glyphicon-th-large"></i></a></li>
 				<li><a href="#users"><i class="glyphicon glyphicon-tag"></i></a></li>
 				<li><a href="#users"><i class="glyphicon glyphicon-user"></i></a></li>
-				<li><a href="#contact">Statistics</a></li>
-				<li class="bottom">
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Settings</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Logout</a></li>
-					</ul>
-
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-						<?php echo $this->Html->image('me.png', array('class' => 'img-circle profilepicture-small')); ?>
-					</a>
-				</li>
+				<li class="bottom"><a href="#settings"><i class="glyphicon glyphicon-cog"></i></a></li>
 			</ul>
 		</div>
 		<div id="container" class="container-fluid">
-
+			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
 	</body>

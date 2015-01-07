@@ -13,47 +13,39 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+    <?php echo $this->Html->charset(); ?>
 
-		echo $this->Html->css('cake.generic');
+    <title>QuickHelp - <?php echo $title_for_layout; ?></title>
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+    <?php
+    echo $this->Html->meta('icon');
+
+    echo $this->Html->css('bootstrap.min');
+    echo $this->Html->css('error');
+
+    echo $this->Html->script('jquery-1.11.1.min');
+    echo $this->Html->script('bootstrap.min');
+
+    echo $this->fetch('meta');
+    echo $this->fetch('css');
+    echo $this->fetch('script');
+    ?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+    <div class="container-fluid">
+    	<div class="row">
+    		<div class="col-xs-10 col-xs-offset-1">
+		        <?php echo $this->Session->flash(); ?>
+		        
+		        <div id="error-wrapper">
+		            <?php echo $this->fetch('content'); ?>
+		        </div>
+		    </div>
+       	</div>
+    </div>
 </body>
 </html>

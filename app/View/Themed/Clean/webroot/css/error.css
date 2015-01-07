@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: #ECECEC;
+}
+
+#error-wrapper {
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    display: block;
+    padding: 25px;
+    background: #FFFFFF;
+    margin-top: 20px;
+}

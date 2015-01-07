@@ -157,8 +157,9 @@ input:active {
 
 .nav.navbar-nav > .active > a {
     height: 66px;
-    color: #6283c2 !important;
-    background-color: #f4f8ff !important;
+    color: #5395ff !important;
+    /*background-color: #f4f8ff !important;*/
+    background-color: #343F4B !important;
 }
 
 .navbar-form {

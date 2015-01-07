@@ -35,6 +35,10 @@ class AppController extends Controller {
 	public function beforeRender() {
 		//$this->view = 'Theme';
 		$this->theme = 'clean';
+		
+		if($this->name == 'CakeError'){
+			$this->layout = 'error';
+		}
 	}
 
 	public $components = array(
