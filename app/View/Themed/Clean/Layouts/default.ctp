@@ -39,7 +39,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		?>
 	</head>
 	<body>
-		<nav id="mainmenu" class="navbar container-fluid shadowBorder" role="navigation">
+		<nav id="mainmenu" class="navbar container-fluid" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span>
@@ -53,7 +53,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Tickets</a></li>
 					<li><a href="#">Social</a></li>
-					<li><a href="#">Chat</a></li>
+					<li><a href="#">Chat<span class="badge">4</span></a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">Stats</a></li>
 					<li><a href="#">Admin</a></li>
@@ -98,8 +98,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</ul>
 		</div>
 		<div id="container" class="container-fluid">
-			<?php echo $this->Session->flash(); ?>
-			<?php echo $this->fetch('content'); ?>
+			<div class="row">
+			    <div class="col-xs-12">
+					<?php echo $this->Session->flash(); ?>
+					<?php echo $this->fetch('content'); ?>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

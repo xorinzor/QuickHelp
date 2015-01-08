@@ -3,7 +3,7 @@
  */
 
 body {
-    font-family: 'Open Sans', #containersans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: #FFF;
 }
 
@@ -79,7 +79,7 @@ input:active {
  */
 
 .shadowBorder {
-    box-shadow: 0 5px 15px 0 rgba(0, #container0, #container0, #container0.17);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.17);
 }
 
 /**
@@ -91,7 +91,7 @@ input:active {
     padding: 0;
     border: 0;
     border-radius: 0;
-    font-family: 'PT Serif', #containerserif;
+    font-family: 'PT Serif', sans-serif;
     font-size: 17px;
     background: #343f4b;
     margin-bottom: 0;
@@ -142,12 +142,12 @@ input:active {
 }
 
 .nav.navbar-nav > li:hover {
-    background-color: #c0d2f5;
+    background-color: #6283c2;
 }
 
 .nav.navbar-nav > li:hover > a {
     height: 66px;
-    background-color: #f4f8ff !important;
+    background-color: #343F4B !important;
     color: #6283c2 !important;
 }
 
@@ -181,6 +181,21 @@ input:active {
     margin-left: 7px;
 }
 
+nav .badge {
+  position: absolute;
+  top: 8px;
+  right: -3px;
+  height: 16px;
+  padding: 0 4px;
+  line-height: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  border: 1px solid #5395ff;
+  border-radius: 10px;
+  color: #5395ff;
+  background: transparent;
+}
+
 /**
  * Sidebar styling
  */
@@ -195,13 +210,17 @@ input:active {
     z-index: 9;
 }
 
+#sidebar > .nav > li > a {
+    padding: 25px 15px;
+    color: #2a88a8;
+}
+
 #sidebar > .nav > li.active > a {
     color: #ffffff;
 }
 
-#sidebar > .nav > li > a {
-    padding: 25px 15px;
-    color: #2a88a8;
+#sidebar > .nav > li.active:hover > a {
+    background-color: inherit;
 }
 
 #sidebar > .nav > li.bottom {
