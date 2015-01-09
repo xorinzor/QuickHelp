@@ -263,6 +263,15 @@ nav .badge {
 /**
  * ticket/view elements
  */
+ 
+/* Ticket/index */
+.action {
+    margin-left: 5px;
+}
+
+.action:first-child {
+    margin-left: 0;
+}
 
 #ticketInfo {
     margin: 0 0 15px 0;

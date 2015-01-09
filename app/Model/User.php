@@ -17,15 +17,34 @@ class User extends AppModel {
                 'message' => 'A password is required'
             )
         ),
-        'email' => 'email',
+        'email' => array(
+            'required' => array(
+                'rule' => array('email'),
+                'message' => 'A email is required'
+            )
+        ),
+        'firstname' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'A first name is required'
+            )
+        ),
+        'lastname' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'A last name is required'
+            )
+        ),
         'role' => array(
             'valid' => array(
-                'rule' => array('inList', array('admin', 'author')),
+                'rule' => array('inList', array('admin', 'author', 'customer')),
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )
         )
     );
+    
+    public $hasMany = 'Ticket';
     
     public function beforeSave($options = array()) {
         if (isset($this->data[$this->alias]['password'])) {

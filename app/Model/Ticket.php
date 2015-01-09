@@ -3,24 +3,24 @@
 App::uses('AppModel', 'Model');
 
 class Ticket extends AppModel {
-    public $hasOne = array(
-        'Assignee' => array(
-            'className' => 'User'
-        ),
-        'Customer' => array(
-            'className' => 'User'
-        )
-    );
-    
     public $hasMany = array(
         'Messages' => array(
             'className' => 'TicketMessage'
         )
     );
-    
-    public $hasAndBelongsToMany = array(
-        'User' => array(
+
+    public $belongsTo = array(
+        'Status' => array(
+            'className' => 'TicketStatus',
+            'foreignKey' => 'ticket_status_id'
+        ),
+        'Assignee' => array(
             'className' => 'User',
+            'foreignKey' => 'assignee_id'
+        ),
+        'Customer' => array(
+            'className' => 'User',
+            'foreignKey' => 'customer_id'
         )
     );
     

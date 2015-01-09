@@ -1,7 +1,7 @@
-<h3><?php echo __('Add User'); ?></h3>
+<h3><?php echo __('Create Ticket'); ?></h3>
 
 <?php 
-    echo $this->Form->create('User', array(
+    echo $this->Form->create('Ticket', array(
         'class' => 'form-horizontal', 
         'role' => 'form',
         'inputDefaults' => array(
@@ -15,12 +15,7 @@
         )
     ));
     
-    echo $this->Form->input('username');
-    echo $this->Form->input('password');
-    echo $this->Form->input('email');
-    echo $this->Form->input('rule', array(
-        'options' => array('admin' => 'Admin', 'agent' => 'Agent', 'customer' => 'Customer')
-    ));
+    echo $this->Form->input('title');
     
-    echo $this->Form->end(__('Create user')); 
+    echo $this->Form->end(__('Create Ticket')); 
 ?>
