@@ -37,6 +37,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			echo $this->fetch('css');
 			echo $this->fetch('script');
 		?>
+		<script type="text/javascript">
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			})
+		</script>
 	</head>
 	<body>
 		<nav id="mainmenu" class="navbar container-fluid" role="navigation">
@@ -51,12 +56,57 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Tickets</a></li>
-					<li><a href="#">Social</a></li>
-					<li><a href="#">Chat<span class="badge">4</span></a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Stats</a></li>
-					<li><a href="#">Admin</a></li>
+					<li <?php if(strtolower($this->params['controller']) == 'tickets') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('Tickets'),
+								array(
+									'controller' => 'Tickets',
+									'action' => 'index'
+								));
+						?>
+					</li>
+					<li <?php if(strtolower($this->params['controller']) == 'social') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('Social'),
+								array(
+									'controller' => 'Social',
+									'action' => 'index'
+								));
+						?>
+					</li>
+					<li <?php if(strtolower($this->params['controller']) == 'faq') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('Chat') . '<span class="badge">4</span>',
+								array(
+									'controller' => 'Chat',
+									'action' => 'index'
+								),
+								array('escape' => false));
+						?>
+					</li>
+					<li <?php if(strtolower($this->params['controller']) == 'faq') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('FAQ'),
+								array(
+									'controller' => 'Faq',
+									'action' => 'index'
+								));
+						?>
+					</li>
+					<li <?php if(strtolower($this->params['controller']) == 'users') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('Users'),
+								array(
+									'controller' => 'Users',
+									'action' => 'index'
+								));
+						?>
+					</li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right navbar-profile">
@@ -67,9 +117,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						</a>
 
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Settings</a></li>
+							<li><a href="#"><?php echo __('Profile'); ?></a></li>
 							<li class="divider"></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="#"><?php echo __('Logout'); ?></a></li>
 						</ul>
 					</li>
 				</ul>
@@ -91,10 +141,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		<div id="sidebar">
 			<ul class="nav">
-				<li class="active"><a href="#"><i class="glyphicon glyphicon-th-large"></i></a></li>
-				<li><a href="#users"><i class="glyphicon glyphicon-tag"></i></a></li>
+				<li <?php if(strtolower($this->params['action']) == 'dashboard') { echo 'class="active"'; } ?>><a href="<?php echo $this->Html->url(array('controller' => 'Tickets', 'action' => 'index')); ?>" data-toggle="tooltip" data-placement="right" title="Dashboard"><i class="glyphicon glyphicon-th-large"></i></a></li>
+				<li <?php if(strtolower($this->params['action']) == 'index') { echo 'class="active"'; } ?>><a href="<?php echo $this->Html->url(array('controller' => 'Tickets', 'action' => 'index')); ?>" data-toggle="tooltip" data-placement="right" title="List"><i class="glyphicon glyphicon-th-list"></i></a></li>
+				<li <?php if(strtolower($this->params['action']) == 'new') { echo 'class="active"'; } ?>><a href="#users" data-toggle="tooltip" data-placement="right" title="Create ticket"><i class="glyphicon glyphicon-tag"></i></a></li>
 				<li><a href="#users"><i class="glyphicon glyphicon-user"></i></a></li>
-				<li class="bottom"><a href="#settings"><i class="glyphicon glyphicon-cog"></i></a></li>
+				<li class="bottom"><a href="#settings" data-toggle="tooltip" data-placement="right" title="Settings"><i class="glyphicon glyphicon-cog"></i></a></li>
 			</ul>
 		</div>
 		<div id="container" class="container-fluid">

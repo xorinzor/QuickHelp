@@ -2,6 +2,6 @@
 
 Open source ticket system
 
-## Todo
+## Dev-Reminders
 
 * view/Tickets/index.ctp - Sort by assignee or customer needs to go by name, not by ID

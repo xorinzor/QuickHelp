@@ -5,15 +5,6 @@
     if(!empty($msg)) {
         echo '<div class="alert alert-success">' . $msg . '</div>';
     }
-
-    echo $this->Html->link(
-        'Create Ticket',
-        array(
-            'controller' => 'tickets',
-            'action' => 'add',
-        ),
-        array('class' => 'btn btn-warning')
-    );
 ?>
 
 <table class="table table-responsive table-hover">
