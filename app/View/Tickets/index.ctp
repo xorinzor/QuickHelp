@@ -43,7 +43,8 @@
                             __('View'),
                             array(
                                 'controller' => 'tickets',
-                                'action' => 'add',
+                                'action' => 'view',
+                                'ticket' => $ticket['Ticket']['id']
                             ),
                             array('class' => 'btn btn-info action')
                         );

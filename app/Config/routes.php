@@ -32,6 +32,11 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 /**
+ * Routing for Ticket controller
+ */
+ 	Router::connect('/ticket/view/:id/', array('controller' => 'tickets', 'action' => 'view'), array('id' => '[0-9]+'));
+
+/**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */

@@ -1,7 +1,10 @@
+<pre>
+    <?php print_r($ticket);?>
+</pre>
 <div id="ticketInfo">
     <div class="row">
     	<div class="col-xs-12">
-    		<h2 class="pull-left">Ticket #8572348</h2>
+    		<h2 class="pull-left">Ticket #<?php echo $ticket['Ticket']['id']; ?></h2>
     
     		<div id="ticketOptionsGroup" class="btn-group pull-right" role="options">
     			<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Opgelost</button>
@@ -10,47 +13,47 @@
     		</div>
     	</div>
     </div>
-    
+
     <hr />
-    
+
     <div class="row">
     	<div class="col-xs-6">
     		<table class="table">
     			<tr>
     				<td>Status</td>
-    				<td><span class="label label-danger">Open</span></td>
+    				<td><span class="label <?php echo $ticket['Status']['class']; ?>"><?php echo $ticket['Status']['title']; ?></span></td>
     			</tr>
     			<tr>
     				<td>Prioriteit</td>
-    				<td><span class="label label-danger">High</span></td>
+    				<td><span class="label <?php echo $ticket['Priority']['class']; ?>"><?php echo $ticket['Priority']['title']; ?></span></td>
     			</tr>
     			<tr>
     				<td>Afdeling</td>
-    				<td>Technische Support</td>
+    				<td><?php if(empty($ticket['Department']['id'])) { echo '<i>'.__('No department').'</i>'; } else { echo $ticket['Department']['name']; } ?></td>
     			</tr>
     			<tr>
     				<td>Datum aangemaakt</td>
-    				<td>21-12-2014 21:22</td>
+    				<td><?php echo $ticket['Ticket']['created']; ?></td>
     			</tr>
     		</table>
     	</div>
     	<div class="col-xs-6">
     		<table class="table">
     			<tr>
-    				<td>Naam</td>
-    				<td>Jorin Vermeulen</td>
+    				<td><?php echo __('Name'); ?></td>
+    				<td><?php echo $ticket['Customer']['firstname'] . ' ' . $ticket['Customer']['lastname']; ?></td>
     			</tr>
     			<tr>
-    				<td>Email</td>
-    				<td>me@jorinvermeulen.com</td>
+    				<td><?php echo __('Email'); ?></td>
+    				<td><?php echo $ticket['Customer']['email']; ?></td>
     			</tr>
     			<tr>
-    				<td>Telefoon</td>
-    				<td>(+31) 6 34514598</td>
+    				<td><?php echo __('Phone'); ?></td>
+    				<td><?php echo $ticket['Customer']['phone']; ?></td>
     			</tr>
     			<tr>
-    				<td>Aangemaakt via</td>
-    				<td>web / medewerker / etc</td>
+    				<td><?php echo __('Created via'); ?></td>
+    				<td>moet nog - web / medewerker / etc</td>
     			</tr>
     		</table>
     	</div>
@@ -58,30 +61,34 @@
     <br />
     <div class="row">
     	<div class="col-xs-6">
-    		<table class="table">
+    	    <table class="table">
+    		    <tr>
+    		        <td><?php echo __('Title'); ?></td>
+                    <td><?php echo $ticket['Ticket']['title']; ?></td>
+    		    </tr>
     			<tr>
-    				<td>Toegewezen aan</td>
-    				<td>Xorinzor</td>
+    				<td><?php echo __('Subject'); ?></td>
+    				<td>moet nog - software > office</td>
     			</tr>
     			<tr>
-    				<td>SLA overeenkomst</td>
-    				<td>Default SLA</td>
-    			</tr>
-    			<tr>
-    				<td>Einddatum</td>
-    				<td>21-12-2014 21:22</td>
+    				<td><?php echo __('Last update'); ?></td>
+    				<td><?php if(count($ticket['Messages']) == 0) { echo $ticket['Ticket']['modified']; } else { echo ''; } ?></td>
     			</tr>
     		</table>
     	</div>
     	<div class="col-xs-6">
     		<table class="table">
     			<tr>
-    				<td>Onderwerp</td>
-    				<td>software > office</td>
+    				<td><?php echo __('Assigned to'); ?></td>
+    				<td><?php if(empty($ticket['Assignee']['id'])) { echo '<i>'.__('Unassigned').'</i>'; } else { echo $ticket['Assignee']['firstname'] . ' ' . $ticket['Assignee']['lastname']; } ?></td>
     			</tr>
     			<tr>
-    				<td>Laatste bericht</td>
-    				<td>21-12-2014 21:22</td>
+    				<td><?php echo __('SLA'); ?></td>
+    				<td><?php echo $ticket['Sla']['title']; ?></td>
+    			</tr>
+    			<tr>
+    				<td><?php echo __('To be solved by'); ?></td>
+    				<td>moet nog - 21-12-2014 21:22</td>
     			</tr>
     		</table>
     	</div>

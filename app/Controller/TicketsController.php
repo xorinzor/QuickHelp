@@ -3,7 +3,9 @@
 App::uses('AppController', 'Controller');
 
 class TicketsController extends AppController {
-    public $helpers = array('Wysiwyg.Ck' => array('editor' => 'Ck'));
+    public $helpers = array(
+        'Wysiwyg.Ck' => array('editor' => 'Ck')
+    );
     
     public function index() {
         $this->Ticket->recursive = 0;
@@ -26,7 +28,13 @@ class TicketsController extends AppController {
 		$this->set('ticketStatuses', $this->Ticket->Status->find('list'));
     }
     
-    public function view() {
+    public function view($id = null) {
+        $data = $this->Ticket->findById($id);
         
+        if (!$data) {
+            throw new NotFoundException(__('Invalid Ticket'));
+        }
+        
+        $this->set('ticket', $data);
     }
 }

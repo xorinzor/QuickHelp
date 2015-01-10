@@ -14,6 +14,10 @@ class Ticket extends AppModel {
             'className' => 'TicketStatus',
             'foreignKey' => 'ticket_status_id'
         ),
+        'Priority' => array(
+            'className' => 'TicketPriority',
+            'foreignKey' => 'ticket_priority_id'
+        ),
         'Assignee' => array(
             'className' => 'User',
             'foreignKey' => 'assignee_id'
@@ -21,6 +25,14 @@ class Ticket extends AppModel {
         'Customer' => array(
             'className' => 'User',
             'foreignKey' => 'customer_id'
+        ),
+        'Department' => array(
+            'className' => 'Department',
+            'foreignKey' => 'department_id'
+        ),
+        'Sla' => array(
+            'className' => 'Sla',
+            'foreignKey' => 'sla_id'
         )
     );
     

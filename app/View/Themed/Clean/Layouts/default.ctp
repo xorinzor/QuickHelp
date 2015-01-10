@@ -76,7 +76,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 								));
 						?>
 					</li>
-					<li <?php if(strtolower($this->params['controller']) == 'faq') { echo 'class="active"'; } ?>>
+					<li <?php if(strtolower($this->params['controller']) == 'chat') { echo 'class="active"'; } ?>>
 						<?php
 							echo $this->Html->link(
 								__('Chat') . '<span class="badge">4</span>',
@@ -103,6 +103,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 								__('Users'),
 								array(
 									'controller' => 'Users',
+									'action' => 'index'
+								));
+						?>
+					</li>
+					<li <?php if(strtolower($this->params['controller']) == 'Admin') { echo 'class="active"'; } ?>>
+						<?php
+							echo $this->Html->link(
+								__('Admin'),
+								array(
+									'controller' => 'Admin',
 									'action' => 'index'
 								));
 						?>

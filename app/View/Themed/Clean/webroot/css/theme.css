@@ -284,6 +284,11 @@ nav .badge {
     color: #6383c2;
 }
 
+#ticketInfo .ticketTitle {
+    margin-top: 0;
+    color: #6383c2;
+}
+
 #ticketInfo > .row {
     margin: 0;
 }
