@@ -143,8 +143,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<ul class="nav">
 				<li <?php if(strtolower($this->params['action']) == 'dashboard') { echo 'class="active"'; } ?>><a href="<?php echo $this->Html->url(array('controller' => 'Tickets', 'action' => 'index')); ?>" data-toggle="tooltip" data-placement="right" title="Dashboard"><i class="glyphicon glyphicon-th-large"></i></a></li>
 				<li <?php if(strtolower($this->params['action']) == 'index') { echo 'class="active"'; } ?>><a href="<?php echo $this->Html->url(array('controller' => 'Tickets', 'action' => 'index')); ?>" data-toggle="tooltip" data-placement="right" title="List"><i class="glyphicon glyphicon-th-list"></i></a></li>
-				<li <?php if(strtolower($this->params['action']) == 'new') { echo 'class="active"'; } ?>><a href="#users" data-toggle="tooltip" data-placement="right" title="Create ticket"><i class="glyphicon glyphicon-tag"></i></a></li>
-				<li><a href="#users"><i class="glyphicon glyphicon-user"></i></a></li>
+				<li <?php if(strtolower($this->params['action']) == 'new') { echo 'class="active"'; } ?>><a href="<?php echo $this->Html->url(array('controller' => 'Tickets', 'action' => 'add')); ?>" data-toggle="tooltip" data-placement="right" title="Create ticket"><i class="glyphicon glyphicon-tag"></i></a></li>
+
 				<li class="bottom"><a href="#settings" data-toggle="tooltip" data-placement="right" title="Settings"><i class="glyphicon glyphicon-cog"></i></a></li>
 			</ul>
 		</div>

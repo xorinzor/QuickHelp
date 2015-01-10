@@ -15,7 +15,13 @@
         )
     ));
     
-    echo $this->Form->input('title');
+    echo $this->Form->input('Ticket.customer_id');
+    
+    echo $this->Form->input('Ticket.title');
+    
+    echo $this->Ck->textarea('Ticket.issue');
+    
+    echo $this->Form->input('Ticket.ticket_status_id');
     
     echo $this->Form->end(__('Create Ticket')); 
 ?>

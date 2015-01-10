@@ -25,18 +25,22 @@ class Ticket extends AppModel {
     );
     
     public $validate = array(
-        'password' => array(
+        'title' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'A password is required'
+                'message' => 'A title is required'
             )
         ),
-        'email' => 'email',
-        'role' => array(
-            'valid' => array(
-                'rule' => array('inList', array('admin', 'author')),
-                'message' => 'Please enter a valid role',
-                'allowEmpty' => false
+        'issue' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'Please describe your issue'
+            )
+        ),
+        'customer_id' => array(
+            'required' => array(
+                'rule' => array('numeric'),
+                'message' => 'Please assign the customer ID'
             )
         )
     );
