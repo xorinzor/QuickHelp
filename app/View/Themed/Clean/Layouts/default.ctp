@@ -126,7 +126,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 				<div class="navbar-divider navbar-right hidden-xs"></div>
 
-				<form id="search" class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
+				<form id="search" class="navbar-form navbar-right visible-lg" role="search">
 					<div class="form-group">
 						<div class="input-group">
 							<label class="sr-only" for="searchInput">Search</label>

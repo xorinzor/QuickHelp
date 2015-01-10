@@ -25,4 +25,8 @@ class TicketsController extends AppController {
 		$this->set('customers', $this->Ticket->Customer->find('list'));
 		$this->set('ticketStatuses', $this->Ticket->Status->find('list'));
     }
+    
+    public function view() {
+        
+    }
 }

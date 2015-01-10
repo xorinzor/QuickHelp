@@ -1,7 +1,6 @@
 /**
  * Element styling
  */
-
 body {
     font-family: 'Open Sans', sans-serif;
     background: #FFF;
@@ -87,6 +86,8 @@ input:active {
  */
 
 #mainmenu {
+    position: fixed;
+    width: 100%;
     height: 70px;
     padding: 0;
     border: 0;
@@ -201,7 +202,7 @@ nav .badge {
  */
 #sidebar {
     float: left;
-    position: absolute;
+    position: fixed;
     top: 0;
     padding-top: 70px;
     width: 80px;
@@ -247,7 +248,7 @@ nav .badge {
  * Main styling
  */
 #container {
-    padding: 10px 0 0 0;
+    padding: 80px 0 0 0;
     margin: 0 0 0 80px;
 }
 
